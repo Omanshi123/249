@@ -1,0 +1,21 @@
+{
+    "version": 1,
+    "author": "Anonymous maker",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -43.3, "left": -53, "attrs": {} },
+      { "type": "wokwi-ir-remote", "id": "remote1", "top": -48, "left": -297.6, "attrs": {} },
+      { "type": "wokwi-ir-receiver", "id": "ir1", "top": 8.25, "left": 132.62, "attrs": {} },
+      { "type": "wokwi-led", "id": "led1", "top": -42, "left": -101.8, "attrs": { "color": "red" } }
+    ],
+    "connections": [
+      [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+      [ "ir1:GND", "esp:GND.1", "black", [ "v0" ] ],
+      [ "esp:3V3", "ir1:VCC", "green", [ "v2.73", "h101.16" ] ],
+      [ "led1:C", "esp:GND.2", "green", [ "v0" ] ],
+      [ "ir1:DAT", "esp:D13", "green", [ "v0" ] ],
+      [ "led1:A", "esp:D12", "green", [ "v0" ] ]
+    ],
+    "dependencies": {}
+  }
